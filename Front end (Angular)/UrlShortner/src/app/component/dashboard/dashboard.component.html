@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-lg-6">
+        <div class="card shadow p-4">
+          <h2 class="text-center mb-4">URL Shortener</h2>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter URL" [(ngModel)]="url" aria-label="Enter URL"
+              aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="button" (click)="generateShortUrl()">Generate Short URL</button>
+          </div>
+          <div *ngIf="isErrorGenerated">
+            <div class="alert alert-danger mt-3" role="alert">
+              Please enter a valid URL.
+            </div>
+          </div>
+          <div *ngIf="isUrlGenerated" class="mt-3">
+            <div class="alert alert-success" role="alert">
+              Your short URL is ready! <a href="{{originalUrl}}" target="_blank">https://www.besturlshortner.com/{{shortUrl}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
